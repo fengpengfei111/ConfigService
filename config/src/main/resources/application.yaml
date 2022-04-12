@@ -4,13 +4,19 @@ server:
 spring:
   application:
     name: config
-  profiles:
-    active: native
   cloud:
     config:
       server:
-        native:
-          search-locations: classpath:/share
+        git:
+          uri: https://github.com/fengpengfei111/SpringCloud.git
+          default-label: master
+#  profiles:
+#    active: native
+#  cloud:
+#    config:
+#      server:
+#        native:
+#          search-locations: classpath:/share
 
 eureka:
   instance:
@@ -20,3 +26,4 @@ eureka:
     register-with-eureka: true
     service-url:
       defaultZone: http://localhost:15000/eureka
+
