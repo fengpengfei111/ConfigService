@@ -1,0 +1,22 @@
+server:
+  port: 15002
+
+spring:
+  application:
+    name: config
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/share
+
+eureka:
+  instance:
+    hostname: cloud-config-service
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:15000/eureka
