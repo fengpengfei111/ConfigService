@@ -4,23 +4,23 @@ server:
 spring:
   application:
     name: config
-  cloud:
-    config:
-      server:
-       git:
-          uri: https://github.com/fengpengfei111/SpringCloud.git
-          default-label: master
-#  profiles:
-#    active: native
 #  cloud:
 #    config:
 #      server:
-#        native:
-#          search-locations: classpath:/share
+#        git:
+#          uri: https://github.com/fengpengfei111/SpringCloud.git
+#          default-label: master
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/share
 
 eureka:
   instance:
-    hostname: cloud-config-service
+    hostname: config
   client:
     fetch-registry: true
     register-with-eureka: true
